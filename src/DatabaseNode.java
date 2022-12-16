@@ -30,13 +30,14 @@ public class DatabaseNode {
             System.out.println("Starting new node on port " + NODE_TCP_PORT + "...");
             nodeServerSocket = new ServerSocket(Integer.parseInt(NODE_TCP_PORT));
 
-            PrintWriter output = new PrintWriter(nodeSocket.getOutputStream());
-            BufferedReader input = new BufferedReader(new InputStreamReader(nodeSocket.getInputStream()));
-
             System.out.println("New node created \n Listening for connections...");
             nodeSocket = nodeServerSocket.accept();
 
             System.out.println("Connected!");
+
+            PrintWriter output = new PrintWriter(nodeSocket.getOutputStream());
+            BufferedReader input = new BufferedReader(new InputStreamReader(nodeSocket.getInputStream()));
+
             String inputLine, outputLine;
 
             while((inputLine = input.readLine()) != null){
