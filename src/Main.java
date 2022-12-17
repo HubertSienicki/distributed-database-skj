@@ -3,8 +3,6 @@ public class Main {
         DatabaseNode dbn = new DatabaseNode(
                 "9997",
                 "localhost",
-                null,
-                null,
                 1,
                 2
         );
